@@ -1,12 +1,12 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        int ans=INT_MIN;
-        int temp=0;
-        for(auto k:nums){
-            temp = max (temp+=k, k);
-            ans = max(temp,ans);
+        int sum = -100000;
+        int temp = -100000;
+        for(auto i :nums){
+            temp = max(temp+i,i);
+            sum = max(sum, temp);
         }
-        return ans;
+        return sum ;
     }
 };
